@@ -8,6 +8,7 @@ def main():
     colors = ['red', 'green', 'blue', 'black', 'grey', 'yellow', 'purple']
     loop = 1
 
+
     while loop:
         group = []
         for edge in graph.es:
@@ -34,8 +35,11 @@ def main():
             if e['color'] is None:
                 loop = 1
 
+    print('*' * 30, '\n\tEDGES\t\t\tCOLORS')
+    print('*' * 30)
     for e in graph.es:
-        print(f'Edge[{graph.vs[e.source]["name"]}, {graph.vs[e.target]["name"]}] = {e["color"]}')
+        print(f'\tEdge[{graph.vs[e.source]["name"]}, {graph.vs[e.target]["name"]}]\t\t{e["color"]}')
+    print('*' * 30)
 
     plot(graph, target=plt.axes())
     plt.axis('off')
